@@ -1,0 +1,73 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>38bd37c6-74a3-4972-b9a9-1058253b91b6</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>Motus.py</StartupFile>
+    <SearchPath>..\..\MOTUX</SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>Motus</Name>
+    <RootNamespace>Motus</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="game_engine\Game.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="game_engine\GamesManager.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="game_engine\Options.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="game_engine\Utils.py" />
+    <Compile Include="game_engine\__init__.py" />
+    <Compile Include="Motus.py" />
+    <Compile Include="ui\GameWidget.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ui\MainWindow.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ui\MotusTableWidget.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ui\OptionsDialog.py" />
+    <Compile Include="ui\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="game_engine\" />
+    <Folder Include="ui\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ui\GameWidget.ui" />
+    <Content Include="ui\MainWindow.ui" />
+    <Content Include="ui\OptionsDialog.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\common\common.pyproj">
+      <Name>common</Name>
+      <Project>{e3246d9f-34e8-46bf-85ec-df8952626fb9}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
